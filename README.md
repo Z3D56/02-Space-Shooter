@@ -8,11 +8,11 @@ A basic space-shooter arcade game, created in Godot.
 ## Implementation
 
 Created using
-Godot
-Kenny.nl
+Godot,
+Kenny.nl,
 opengameheart.org
 
-The Gloudy typeface was developed by Barry Shwartz and is freely available for personal use.
+The Gloudy typeface was developed by Barry Shwartz
 
 ## References
 None
