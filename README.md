@@ -1,5 +1,5 @@
 
-# Exercise-02d-Menu-and-HUD
+# 02-Space-Shooter
 
 Exercise for MSCH-C220
 
