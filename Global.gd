@@ -4,6 +4,7 @@ var score = 0
 var time = 0
 var lives = 0
 var VP = null
+var shield_health = 0
 
 
 func _ready():
@@ -57,5 +58,6 @@ func update_lives(l):
 
 func reset():
 	score = 0
-	time = 30
-	lives = 5
+	time = 45
+	lives = 3
+	shield_health = 1

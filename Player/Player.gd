@@ -1,11 +1,11 @@
 extends KinematicBody2D
 
-var velocity = Vector2.ZERO
 
+var velocity = Vector2.ZERO
 var rotation_speed = 5.0
-var speed = 5.0
-var max_speed = 400.0
-var health = 1
+var speed = 4.0
+var max_speed = 250.0
+var health = 2
 
 var Effects = null
 onready var Explosion = load("res://Effects/Explosion.tscn")
@@ -14,9 +14,9 @@ onready var Bullet = load("res://Player/Bullet.tscn")
 var nose = Vector2(0,-60)
 
 
-
 func _ready():
 	pass
+
 
 func _physics_process(_delta):
 	velocity = velocity + get_input()*speed
@@ -25,6 +25,7 @@ func _physics_process(_delta):
 	position.x = wrapf(position.x, 0, Global.VP.x)
 	position.y = wrapf(position.y, 0, Global.VP.y)
 
+
 	if Input.is_action_just_pressed("shoot"):
 		var Effects = get_node_or_null("/root/Game/Effects")
 		if Effects != null:
@@ -32,7 +33,6 @@ func _physics_process(_delta):
 			bullet.global_position = global_position + nose.rotated(rotation)
 			bullet.rotation = rotation
 			Effects.add_child(bullet)
-
 
 
 func get_input():
@@ -46,7 +46,8 @@ func get_input():
 	if Input.is_action_pressed("right"):
 		rotation_degrees = rotation_degrees + rotation_speed
 	return to_return.rotated(rotation)
-	
+
+
 func damage(d):
 	health -= d
 	if health <= 0:
@@ -63,4 +64,4 @@ func damage(d):
 
 func _on_Area2D_body_entered(body):
 	if body.name != "Player":
-		damage(100)
+		damage(4)
